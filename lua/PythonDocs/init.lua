@@ -7,8 +7,8 @@ local run_pdoc = function(args)
             command = "pdoc",
             args = args,
             -- better std_err and out
-            on_stderr = function(line)
-                vim.notify("pdoc: " .. line, vim.log.warning)
+            on_stderr = function(err, _)
+                vim.notify("pdoc: " .. err, vim.log.warning)
             end,
             on_stdout = function(line)
                 vim.notify("pdoc created")
@@ -17,6 +17,8 @@ local run_pdoc = function(args)
         :start()
 end
 
+---Check project checks if __init__ is at head,
+-- if not then it converts all python files into docs
 local check_if_proejct = function()
     local proj_path = vim.fn.getcwd()
     local is_project = false
@@ -44,12 +46,15 @@ local check_if_proejct = function()
     end
 end
 
+--- Arg parser for documentation.
+---@param info some file or list of files
+local function arg_parser(info)
+    return { "-o", "./docs", info }
+end
+
 local M = {}
 
 M.save_project = function()
-    local function arg_parser(info)
-        return { "-o", "./docs", info }
-    end
     local get_project_info = check_if_proejct()
     vim.notify("Pdoc generating ./docs", get_project_info)
     if type(get_project_info) == "string" then
@@ -67,10 +72,32 @@ M.save_current_file = function()
         return
     end
     local file_name = api.nvim_buf_get_name(0)
-    run_pdoc(file_name)
+    run_pdoc(arg_parser(file_name))
 end
 
-M.local_run_file = function()
+function M.test()
+    local file_name = api.nvim_buf_get_name(0)
+    local cmd = "pdoc"
+    Job
+        :new({
+            command = cmd,
+            args = { "", file_name },
+            cwd = vim.fn.fnamemodify(file_name, ":p:h"),
+            on_stderr = function(line) end,
 
+            on_stdout = function(err, line) end,
+        })
+        :start()
+end
 
+function M.pdoc_close()
+    -- run terminal command to kill everythign on localhost port 8080
+    -- this is a bit hacky but it works
+    -- vim.cmd([[!kill $(lsof -t -i:8080)]])
+    -- local cmd = "!kill $(lsof -t -i:8080)"
+    --- Alternative methods
+    --  local cmd = "lsof -t -i:8080 | xargs kill"
+    local cmd = "lsof -t -i:8080 | xargs kill -9"
+    vim.cmd(cmd)
+end
 return M
