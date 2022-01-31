@@ -21,9 +21,18 @@ Projects + AOF for main things, Assignees through `#contexts`
   -- [ ]  As a subtask, nice constructor for users to run their own servers and documentation engines (that way we dont have to make 1000)
 
 * Documentation to norg
-  - [ ] Parse treesitter html per documentation type, turn it into norg
-  -- [ ] Make a mapping /html_node/→ /norg node/, and then generate the norg stuff
-  - [-] do it without treesitter and without importing code (use ast, no need for incremental parsing)
+ ** Parse treesitter html per documentation type, turn it into norg
+  -- [ ] Figure out how to just highlight the document section in TS playground
+  -- [ ] Save that query for pdoc
+ | experimental
+ **  do it without treesitter and without importing code (use ast, no need for incremental parsing)
+  -- [x] Pure python parser using AST
+  -- [ ] Make it run in a reasonable fashion? How to do?
+ ** do it in treesitter per lang
+    -- [ ] Queries to get python docstring
+    -- [ ] Somehow get their context
+    | _
+
 | _
 
 * Plans
@@ -33,3 +42,4 @@ Projects + AOF for main things, Assignees through `#contexts`
  ** If we can map from html nodes to norg nodes, can we just parse any static site?
  ** If we can map from html nodes to norg nodes, can we reverse the mapping and make a statics site?
  ** {https://github.com/nvim-treesitter/nvim-treesitter/blob/master/queries/html_tags/highlights.scm#L24}[html tags]
+  *** Reading treesitter docs as above is the easiest way to learn
