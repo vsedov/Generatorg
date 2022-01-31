@@ -32,3 +32,4 @@ Projects + AOF for main things, Assignees through `#contexts`
 * Ephemeral notes
  ** If we can map from html nodes to norg nodes, can we just parse any static site?
  ** If we can map from html nodes to norg nodes, can we reverse the mapping and make a statics site?
+ ** {https://github.com/nvim-treesitter/nvim-treesitter/blob/master/queries/html_tags/highlights.scm#L24}[html tags]
