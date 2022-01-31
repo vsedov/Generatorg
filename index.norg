@@ -23,6 +23,7 @@ Projects + AOF for main things, Assignees through `#contexts`
 * Documentation to norg
   - [ ] Parse treesitter html per documentation type, turn it into norg
   -- [ ] Make a mapping /html_node/→ /norg node/, and then generate the norg stuff
+  - [-] do it without treesitter and without importing code (use ast, no need for incremental parsing)
 | _
 
 * Plans
