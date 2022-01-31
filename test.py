@@ -89,8 +89,8 @@ class multiv2:
 
     Attributes
     ----------
-    inner : inner
-    innerinner : inner, inner
+    inner : inner2
+    innerinner : inner, inner2
     """
     def __init__(self):
         """
@@ -101,15 +101,15 @@ class multiv2:
 
     def show(self):
         """
-        Shows the outer class
+        Shows the outer class2
         """
         def statement(x: str):
             """
-            Prints a string
+            Prints a string2
 
             Parameters
             ----------
-            x : str
+            x : str2
 
             """
             print(x)
@@ -122,7 +122,7 @@ class multiv2:
 
         Attributes
         ----------
-        innerinner :  the inner
+        innerinner :  the inner2
         """
         def __init__(self):
             """
@@ -132,7 +132,7 @@ class multiv2:
 
         def show_classes(self):
             """
-            Shows the inner class
+            Shows the inner class2
             """
             print("This is Inner class")
             print(self.innerinner)
@@ -140,7 +140,7 @@ class multiv2:
         class InnerInner:
 
             """
-            Innermost class
+            Innermost class2
             """
             def inner_display(self, msg):
                 """
@@ -148,7 +148,7 @@ class multiv2:
 
                 Parameters
                 ----------
-                msg : msg to print
+                msg : msg to print2
 
                 """
                 print("InnerInner class")
@@ -157,11 +157,11 @@ class multiv2:
         def inner_display(self, msg):
             """
 
-            dipslays inner class
+            dipslays inner class2
 
             Parameters
             ----------
-            msg : message to print
+            msg : message to print2
 
             """
             print("This is Inner class")

@@ -1,0 +1,58 @@
+* multi
+** Attributes
+    - inner : inner
+    - innerinner : inner, inner
+** __init__
+      Sets up inner and inner inner
+** show
+      Shows the outer class
+*** statement
+        Prints a string
+**** Parameters
+        - x : str
+** Inner
+*** Attributes
+      - innerinner :  the inner
+*** __init__
+        sets the stuff up
+*** show_classes
+        Shows the inner class
+*** InnerInner
+        Innermost class
+**** inner_display
+          displays innermost class
+***** Parameters
+          - msg : msg to print
+*** inner_display
+        dipslays inner class
+**** Parameters
+        - msg : message to print
+* multiv2
+** Attributes
+    - inner : inner2
+    - innerinner : inner, inner2
+** __init__
+      Sets up inner and inner inner
+** show
+      Shows the outer class2
+*** statement
+        Prints a string2
+**** Parameters
+        - x : str2
+** Inner
+*** Attributes
+      - innerinner :  the inner2
+*** __init__
+        sets the stuff up
+*** show_classes
+        Shows the inner class2
+*** InnerInner
+        Innermost class2
+**** inner_display
+          displays innermost class
+***** Parameters
+          - msg : msg to print2
+*** inner_display
+        dipslays inner class2
+**** Parameters
+        - msg : message to print2
