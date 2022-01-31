@@ -1,0 +1,33 @@
+@document.meta
+  title: index
+  description: planning, todos, and ephemera
+  authors: vsedov, josephsdavid
+  categories: 
+  created: 2022-01-30
+  version: 0.0.9
+@end
+
+#comment
+Projects + AOF for main things, Assignees through `#contexts`
+
+
+
+| v1
+* HTML doc hosting in python
+  - [x] Basic get pdoc running
+  - [ ] Elegant thing for user configuration
+  - [ ] Nice way to close the running server
+  - [ ] Figure out how to start a little server for other languages (say ldoc and doxygen)
+  -- [ ]  As a subtask, nice constructor for users to run their own servers and documentation engines (that way we dont have to make 1000)
+
+* Documentation to norg
+  - [ ] Parse treesitter html per documentation type, turn it into norg
+  -- [ ] Make a mapping /html_node/→ /norg node/, and then generate the norg stuff
+| _
+
+* Plans
+ ** Here is a great idea
+
+* Ephemeral notes
+ ** If we can map from html nodes to norg nodes, can we just parse any static site?
+ ** If we can map from html nodes to norg nodes, can we reverse the mapping and make a statics site?
