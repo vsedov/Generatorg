@@ -8,3 +8,6 @@ vim.cmd("command! -bang -nargs=0 LiveDoc :lua require('generatorg').live_run_cur
 
 -- kill pdoc
 vim.cmd("command! -bang -nargs=0 KillPdoc :lua require('generatorg').pdoc_close()")
+
+-- Live project
+vim.cmd("command! -bang -nargs=0 LiveProject :lua require('generatorg').live_project()")

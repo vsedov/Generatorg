@@ -80,15 +80,26 @@ M.save_current_file = function()
     run_pdoc(arg_parser(file_name))
 end
 
-function M.pdoc_close()
+M.pdoc_close = function()
     local cmd = "!lsof -t -i:8080 | xargs kill -9"
     vim.cmd(cmd)
 end
 
-function M.live_run_current_file()
+M.live_run_current_file = function()
     local args = { vim.fn.expand("%") }
     local cwd = vim.fn.getcwd()
     run_pdoc(args, cwd, true)
+end
+
+M.live_project = function()
+    -- check if is a project
+    local get_project_info = check_if_proejct()
+    print(vim.inspect(get_project_info))
+    if type(get_project_info) == "string" then
+        vim.notify("Pdoc generating on live project", get_project_info)
+        local cwd = vim.fn.getcwd()
+        run_pdoc({ get_project_info }, cwd, true)
+    end
 end
 
 return M
